@@ -21,20 +21,20 @@
 
 ```
 automatedTestingFramework-master
-├── allure-report    --  allure前端
+├── allure-report         --  allure前端
 ├── allure-results        --  测试报告日志
-├── common        --  公共方法模块
-├── config      --  配置模块
-├── page      --  selenium封装模块
-├── page_element    --  元素搜集模块
-├── page_service           --  业务设计模块
-├── script           --  脚本模块
-├── test_case         --  测试用例模块
-├── utils     --  工具模块
-├── conftest.py       --  pytest配置文件
-├── pytest.ini       --  pytest日志配置文件
-├── report.html      --  pytest测试报告
-└── run_case.py          --  allure启动脚本
+├── common                --  公共方法模块
+├── config                --  配置模块
+├── page                  --  selenium封装模块
+├── page_element          --  元素搜集模块
+├── page_service          --  业务设计模块
+├── script                --  脚本模块
+├── test_case             --  测试用例模块
+├── utils                 --  工具模块
+├── conftest.py           --  pytest配置文件
+├── pytest.ini            --  pytest日志配置文件
+├── report.html           --  pytest测试报告
+└── run_case.py           --  allure启动脚本
 ```
 
 ## 项目特点

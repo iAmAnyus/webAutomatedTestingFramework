@@ -1,0 +1,57 @@
+18:45:50 DEBUG Selenium Manager binary found at: F:\information security\PyCharm\py310\lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe selenium_manager.py:90
+18:45:50 DEBUG Executing process: F:\information security\PyCharm\py310\lib\site-packages\selenium\webdriver\common\windows\selenium-manager.exe --browser chrome --debug --language-binding python --output json selenium_manager.py:103
+18:45:50 DEBUG chromedriver not found in PATH selenium_manager.py:129
+18:45:50 DEBUG chrome detected at C:\Program Files\Google\Chrome\Application\chrome.exe selenium_manager.py:129
+18:45:50 DEBUG Running command: wmic datafile where name='C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' get Version /value selenium_manager.py:129
+18:45:50 DEBUG Output: "\r\r\n\r\r\nVersion=124.0.6367.158\r\r\n\r\r\n\r\r\n\r" selenium_manager.py:129
+18:45:50 DEBUG Detected browser: chrome 124.0.6367.158 selenium_manager.py:129
+18:45:50 DEBUG Required driver: chromedriver 124.0.6367.201 selenium_manager.py:129
+18:45:50 DEBUG chromedriver 124.0.6367.201 already in the cache selenium_manager.py:129
+18:45:50 DEBUG Driver path: C:\Users\Administrator\.cache\selenium\chromedriver\win64\124.0.6367.201\chromedriver.exe selenium_manager.py:129
+18:45:50 DEBUG Browser path: C:\Program Files\Google\Chrome\Application\chrome.exe selenium_manager.py:129
+18:45:50 DEBUG Started executable: `C:\Users\Administrator\.cache\selenium\chromedriver\win64\124.0.6367.201\chromedriver.exe` in a child process with pid: 18952 using 0 to output -3 service.py:219
+18:45:51 DEBUG POST http://localhost:54970/session {'capabilities': {'firstMatch': [{}], 'alwaysMatch': {'browserName': 'chrome', 'pageLoadStrategy': <PageLoadStrategy.normal: 'normal'>, 'browserVersion': None, 'goog:chromeOptions': {'extensions': [], 'binary': 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'args': []}}}} remote_connection.py:301
+18:45:51 DEBUG Starting new HTTP connection (1): localhost:54970 connectionpool.py:244
+18:45:51 DEBUG http://localhost:54970 "POST /session HTTP/1.1" 200 0 connectionpool.py:549
+18:45:51 DEBUG Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"124.0.6367.158","chrome":{"chromedriverVersion":"124.0.6367.201 (46cf136d27d50afd9c618d164a3b95b3b62d0027-refs/branch-heads/6367@{#1130})","userDataDir":"C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\scoped_dir18952_727493948"},"fedcm:accounts":true,"goog:chromeOptions":{"debuggerAddress":"localhost:54975"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"windows","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"03346c2d29fa218b6408c027f7f671bc"}} | headers=HTTPHeaderDict({'Content-Length': '886', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:51 DEBUG Finished Request remote_connection.py:357
+18:45:51 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/window/maximize {} remote_connection.py:301
+18:45:52 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/window/maximize HTTP/1.1" 200 0 connectionpool.py:549
+18:45:52 DEBUG Remote response: status=200 | data={"value":{"height":840,"width":1552,"x":-8,"y":-8}} | headers=HTTPHeaderDict({'Content-Length': '51', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:52 DEBUG Finished Request remote_connection.py:357
+18:45:52 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/timeouts {'pageLoad': 60000} remote_connection.py:301
+18:45:52 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/timeouts HTTP/1.1" 200 0 connectionpool.py:549
+18:45:52 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:52 DEBUG Finished Request remote_connection.py:357
+18:45:52 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/url {'url': 'https://www.baidu.com'} remote_connection.py:301
+18:45:57 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/url HTTP/1.1" 200 0 connectionpool.py:549
+18:45:57 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:57 DEBUG Finished Request remote_connection.py:357
+18:45:57 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/timeouts {'implicit': 10000} remote_connection.py:301
+18:45:57 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/timeouts HTTP/1.1" 200 0 connectionpool.py:549
+18:45:57 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:57 DEBUG Finished Request remote_connection.py:357
+18:45:57 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/element {'using': 'xpath', 'value': '//*[@id="s-top-left"]/a[1]'} remote_connection.py:301
+18:45:57 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/element HTTP/1.1" 200 0 connectionpool.py:549
+18:45:57 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"f.CD6933E5796C27301AEECC20BEF1E955.d.3C8D7DF89C417201B315A5FD03493151.e.12"}} | headers=HTTPHeaderDict({'Content-Length': '126', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:57 DEBUG Finished Request remote_connection.py:357
+18:45:57 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/element/f.CD6933E5796C27301AEECC20BEF1E955.d.3C8D7DF89C417201B315A5FD03493151.e.12/click {} remote_connection.py:301
+18:45:57 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/element/f.CD6933E5796C27301AEECC20BEF1E955.d.3C8D7DF89C417201B315A5FD03493151.e.12/click HTTP/1.1" 200 0 connectionpool.py:549
+18:45:57 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:57 DEBUG Finished Request remote_connection.py:357
+18:45:59 DEBUG GET http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/window/handles {} remote_connection.py:301
+18:45:59 DEBUG http://localhost:54970 "GET /session/03346c2d29fa218b6408c027f7f671bc/window/handles HTTP/1.1" 200 0 connectionpool.py:549
+18:45:59 DEBUG Remote response: status=200 | data={"value":["CD6933E5796C27301AEECC20BEF1E955","C517B8E47DE9EA4F65570FE367B5AB08"]} | headers=HTTPHeaderDict({'Content-Length': '81', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:59 DEBUG Finished Request remote_connection.py:357
+18:45:59 DEBUG GET http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/window {} remote_connection.py:301
+18:45:59 DEBUG http://localhost:54970 "GET /session/03346c2d29fa218b6408c027f7f671bc/window HTTP/1.1" 200 0 connectionpool.py:549
+18:45:59 DEBUG Remote response: status=200 | data={"value":"CD6933E5796C27301AEECC20BEF1E955"} | headers=HTTPHeaderDict({'Content-Length': '44', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:59 DEBUG Finished Request remote_connection.py:357
+18:45:59 DEBUG POST http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/window {'handle': 'CD6933E5796C27301AEECC20BEF1E955'} remote_connection.py:301
+18:45:59 DEBUG http://localhost:54970 "POST /session/03346c2d29fa218b6408c027f7f671bc/window HTTP/1.1" 200 0 connectionpool.py:549
+18:45:59 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:45:59 DEBUG Finished Request remote_connection.py:357
+18:46:01 DEBUG GET http://localhost:54970/session/03346c2d29fa218b6408c027f7f671bc/title {} remote_connection.py:301
+18:46:01 DEBUG http://localhost:54970 "GET /session/03346c2d29fa218b6408c027f7f671bc/title HTTP/1.1" 200 0 connectionpool.py:549
+18:46:01 DEBUG Remote response: status=200 | data={"value":"百度一下，你就知道"} | headers=HTTPHeaderDict({'Content-Length': '39', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'}) remote_connection.py:330
+18:46:01 DEBUG Finished Request remote_connection.py:357

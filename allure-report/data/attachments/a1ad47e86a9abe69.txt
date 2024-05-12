@@ -1,0 +1,7 @@
+[INFO] 打开网页：https://www.baidu.com
+[INFO] 点击元素：('xpath', '//*[@id="s-top-loginbtn"]')
+[INFO] 点击元素：('xpath', '//*[@id="TANGRAM__PSP_11__isAgree"]')
+[INFO] 输入文本：yourUser
+[INFO] 输入文本：yourPwd
+[INFO] 点击元素：('xpath', '//*[@id="TANGRAM__PSP_11__submit"]')
+登录后操作

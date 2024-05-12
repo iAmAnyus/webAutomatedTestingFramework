@@ -1,0 +1,8 @@
+登录按钮: 'xpath==//*[@id="s-top-loginbtn"]'
+账号: 'xpath==//*[@id="TANGRAM__PSP_11__userName"]'
+密码: 'xpath==//*[@id="TANGRAM__PSP_11__password"]'
+协议: 'xpath==//*[@id="TANGRAM__PSP_11__isAgree"]'
+登录: 'xpath==//*[@id="TANGRAM__PSP_11__submit"]'
+新闻按钮: 'xpath==//*[@id="s-top-left"]/a[1]'
+新闻页面标题: "百度新闻——海量中文资讯平台"
+百度主页标题: "百度一下，你就知道"

@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"11778285d410190a4e473ab5d6d46486","name":"测试1","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}},{"uid":"279ef3fd4a795641a361810410966d70","name":"测试主流程：顺利通过的全套流程","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

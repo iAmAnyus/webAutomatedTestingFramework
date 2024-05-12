@@ -50,7 +50,7 @@ automatedTestingFramework-master
 
 ## 运行环境
 
-Linux、Windows10、Python3.10
+Windows10、Python3.10
 
 ## 开发环境
 
@@ -69,7 +69,18 @@ Linux、Windows10、Python3.10
 ## 模板样例及测试报告
 ### 模板样例
 ```python
-# Page_Service base on WebPage.py(Selenium二次开发基类)
+# login2.yaml base on page_element
+登录按钮: 'xpath==//*[@id="s-top-loginbtn"]'
+账号: 'xpath==//*[@id="TANGRAM__PSP_11__userName"]'
+密码: 'xpath==//*[@id="TANGRAM__PSP_11__password"]'
+协议: 'xpath==//*[@id="TANGRAM__PSP_11__isAgree"]'
+登录: 'xpath==//*[@id="TANGRAM__PSP_11__submit"]'
+新闻按钮: 'xpath==//*[@id="s-top-left"]/a[1]'
+新闻页面标题: "百度新闻——海量中文资讯平台"
+百度主页标题: "百度一下，你就知道"
+
+# page_Service base on page.WebPage.py(Selenium二次开发基类)
+login = Element('login2')  # 获取login2.yaml
 class baiDuPage(WebPage):
 
     """登录"""
@@ -93,7 +104,7 @@ class baiDuPage(WebPage):
     def btn_news(self):
         self.is_click(login['新闻按钮'])
 
-# test_case.test01 base on baiDuPage
+# test_case.test01 base on page_service.baiDuPage
 class Test01:
 
     @allure.step("测试1.1")
@@ -110,8 +121,8 @@ class Test01:
     def test_002(self, test_001):
         pass
 
-    # test_case.test02 base on baiDuPage
-    @allure.story("测试样例2")
+# test_case.test02 base on baiDuPage
+@allure.story("测试样例2")
 class Test02:
 
     @allure.step("登录")

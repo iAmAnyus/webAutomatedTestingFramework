@@ -104,7 +104,7 @@ class baiDuPage(WebPage):
     def btn_news(self):
         self.is_click(login['新闻按钮'])
 
-# test_case.test01 base on page_service.baiDuPage
+# test_case.test01 base on page_service.login2.py
 class Test01:
 
     @allure.step("测试1.1")
@@ -121,7 +121,7 @@ class Test01:
     def test_002(self, test_001):
         pass
 
-# test_case.test02 base on baiDuPage
+# test_case.test02 base on page_service.login2.py
 @allure.story("测试样例2")
 class Test02:
 

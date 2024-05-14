@@ -59,7 +59,7 @@ def warn(mess, end = '\n', flush = True):
 
 def info(mess, end = '\n', flush = True):
     set_cmd_text_color(FOREGROUND_GREEN)
-    print("[INFO]", mess, end = end, flush = flush)
+    print("[INFO]:", mess, end = end, flush = flush)
     reset()
 
 def write(mess, foregound = FOREGROUND_WHITE, background = FOREGROUND_BLACK, end = '\n', flush = True):

@@ -139,37 +139,42 @@ class WebPage(object):
         driver.switch_to_window(located) # 切换到页面中存在located的元素窗口
         """
         result = False
-        handles = driver.window_handles
-        current_handle = driver.current_window_handle
+        handles = self.driver.window_handles
+        current_handle = self.driver.current_window_handle
         if isinstance(winB, tuple):
             for handle in handles:
-                driver.switch_to.window(handle)
-                time.sleep(2)
+                self.driver.switch_to.window(handle)
+                time.sleep(1)
                 try:
-                    driver.find_element(*winB)
+                    self.driver.find_element(*winB)
                 except NoSuchElementException:
                     pass
                 else:
                     result = True
+                    logger.info(f"切换到具有元素 {winB} 的窗口。")
                     break
             if not result:
-                driver.switch_to.window(current_handle)
+                self.driver.switch_to.window(current_handle)
                 time.sleep(2)
+                logger.warn(f"未能切换到具有元素 {winB} 的窗口。")
         elif isinstance(winB, str):
             for handle in handles:
-                driver.switch_to.window(handle)
+                self.driver.switch_to.window(handle)
                 time.sleep(2)
-                if winB in driver.title:
+                if winB in self.driver.title:
                     result = True
+                    logger.info(f"切换到标题包含 '{winB}' 的窗口。")
                     break
             if not result:
-                driver.switch_to.window(current_handle)
+                self.driver.switch_to.window(current_handle)
                 time.sleep(2)
+                logger.warn(f"未能切换到标题包含 '{winB}' 的窗口。")
         elif isinstance(winB, int):
             if winB <= len(handles):
-                driver.switch_to.window(winB - 1)
+                self.driver.switch_to.window(winB - 1)
                 time.sleep(2)
                 result = True
+                logger.info(f"切换到第 {winB} 个窗口。")
         else:
-            print('参数错误')
+            logger.error('无效的参数')
         return result

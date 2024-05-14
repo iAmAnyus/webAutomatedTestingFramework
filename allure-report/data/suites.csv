@@ -1,3 +1,3 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sun May 12 18:46:11 CST 2024","Sun May 12 18:46:12 CST 2024","1015","test_case","test_02","Test_02","","","test_002","登录后操作"
-"passed","Sun May 12 18:46:02 CST 2024","Sun May 12 18:46:02 CST 2024","0","test_case","test_01","Test_01","","","test_002",""
+"passed","Sun May 12 21:08:25 CST 2024","Sun May 12 21:08:25 CST 2024","1","test_case","test_01","Test01","","","test_002",""
+"passed","Sun May 12 21:08:35 CST 2024","Sun May 12 21:08:36 CST 2024","1012","test_case","test_02","Test02","","","test_002","登录后操作"

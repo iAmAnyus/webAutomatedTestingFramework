@@ -8,11 +8,11 @@ sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
 import pytest
 from common.readConfig import ini
-from page_object.login2 import baiDuPage
+from page_service.login2 import baiDuPage
 from script import inspect
 
-@allure.story("测试主流程：顺利通过的全套流程")
-class Test_02:
+@allure.story("测试样例2")
+class Test02:
 
     @allure.step("登录")
     @pytest.fixture(scope="function")

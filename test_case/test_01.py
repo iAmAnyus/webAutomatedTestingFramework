@@ -4,12 +4,12 @@ import time
 import allure
 from common.readConfig import ini
 import pytest
-from page_object.login2 import baiDuPage
+from page_service.login2 import baiDuPage
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 
-@allure.story("测试1")
-class Test_01:
+@allure.story("测试样例1")
+class Test01:
 
     @allure.step("测试1.1")
     @pytest.fixture(scope="function")

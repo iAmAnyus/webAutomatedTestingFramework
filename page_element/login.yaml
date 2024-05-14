@@ -1,3 +1,0 @@
-账号: 'xpath==//*[@id="login_username"]'
-密码: 'xpath==//*[@id="login_password"]'
-登录: 'xpath==//*[@id="login"]/div[4]/div/div/div/button'

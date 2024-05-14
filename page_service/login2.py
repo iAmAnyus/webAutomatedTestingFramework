@@ -2,18 +2,13 @@
 # -*- coding:utf-8 -*-
 import sys, os
 import time
-
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
-
 from page.webPage import WebPage
 from common.readElement import Element
-
 login = Element('login2')  # 获取login2.yaml
-
-
 class baiDuPage(WebPage):
 
-    '''登录'''
+    """登录"""
     def BaiDuClick(self):
         self.is_click(login['登录按钮'])
 
@@ -28,7 +23,6 @@ class baiDuPage(WebPage):
 
     def btn_login(self):
         self.is_click(login['登录'])
-
     """
     新闻
     """

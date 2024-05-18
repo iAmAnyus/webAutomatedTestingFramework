@@ -5,7 +5,12 @@ import time
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 from page.webPage import WebPage
 from common.readElement import Element
-login = Element('login2')  # 获取login2.yaml
+login = Element('login')  # 获取login.yaml
+"""
+login用法：
+当调用login['名称']时会触发Element.__getitem__方法
+return: Element类所读取的yaml元素配置文件相对应的键值
+"""
 class baiDuPage(WebPage):
 
     """登录"""

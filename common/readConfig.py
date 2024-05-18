@@ -8,17 +8,17 @@ from config.conf import cm
 HOST='HOST'
 
 class ReadConfig(object):
-    '''配置文件'''
+    """配置文件读取类"""
     def __init__(self):
         self.config=configparser.RawConfigParser()
         self.config.read(cm.ini_file,encoding='utf-8')
 
     def _get(self,section,option):
-        '''获取'''
+        """获取配置项的值"""
         return self.config.get(section,option)
 
     def _set(self, section, option, value):
-        """更新"""
+        """获取HOST部分的HOST配置项的值"""
         self.config.set(section, option, value)
         with open(cm.ini_file, 'w') as f:
             self.config.write(f)

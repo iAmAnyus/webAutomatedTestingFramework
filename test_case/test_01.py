@@ -4,7 +4,7 @@ import time
 import allure
 from common.readConfig import ini
 import pytest
-from page_service.login2 import baiDuPage
+from page_service.login import baiDuPage
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 

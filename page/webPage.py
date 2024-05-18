@@ -47,7 +47,7 @@ class WebPage(object):
     def find_element(self, locator):
         """寻找单个元素"""
         return WebPage.element_locator(lambda *args: self.wait.until(
-            EC.presence_of_element_located(args)), locator)  # presence_of_element_located((By.ID,"acdid")) 显式等待
+            EC.presence_of_element_located(args)), locator)   # presence_of_element_located((By.ID,"id")) 显式等待
 
     def get_attrib(self, locator, value):
         """获取元素属性"""

@@ -8,7 +8,7 @@ sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
 import pytest
 from common.readConfig import ini
-from page_service.login2 import baiDuPage
+from page_service.login import baiDuPage
 from script import inspect
 
 @allure.story("测试样例2")

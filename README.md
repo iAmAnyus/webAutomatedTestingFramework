@@ -153,7 +153,19 @@ class Test02:
 ### Allure可视化测试报告
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/05699adf-7b48-4a6f-bde9-214b84a0c0a9)
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/4442d5f6-87a6-4fca-a5c2-b44596907482)
-##
+
+### 基于本地与线上的Jenkins的CI/CD持续集成
+**参考：**
+
+https://blog.csdn.net/weixin_57303037/article/details/135226326
+
+https://www.cnblogs.com/luoshuai7394/p/17706998.html
+
+**效果：**
+
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/a89b6366-9aa8-439a-a6a8-118f33758757)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/ad9c5a55-e922-46ee-9ccc-ee5a28ca0289)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/18ab6c5a-839a-428d-a366-0a0e65e5bbfe)
 
 ## 项目待完成功能
-部分Selenium方法的二次封装、测试数据的持久化、基于本地与线上的Jenkins的CI/CD持续集成...
+部分Selenium方法的二次封装、测试数据的持久化...

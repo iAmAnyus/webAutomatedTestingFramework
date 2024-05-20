@@ -10,19 +10,25 @@ sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
 @allure.story("测试样例1")
 class Test01:
-
-    @allure.step("测试1.1")
+    @allure.step("初始化")
     @pytest.fixture(scope="function")
-    def test_001(self, drivers):
-        driver = baiDuPage(drivers)
-        driver.get_url(ini.url)
+    def initialized(self, drivers):
+        self.driver = baiDuPage(drivers)
+        self.driver.get_url(ini.url)
+
+
+    @allure.step("页面切换")
+    @pytest.mark.usefixtures("initialized")
+    def test_001(self):
+        driver = self.driver
         driver.btn_news()
         time.sleep(1)
-        driver.switch_to_window(drivers,"百度一下，你就知道")
-        time.sleep(1)
-        yield driver
+        driver.switch_to_window(driver, "百度一下，你就知道")
 
-    def test_002(self, test_001):
+
+    @allure.step("测试用例2")
+    def test_002(self):
+        print("测试样例2")
         pass
 
 # pytest会自动搜索测试用例，不用在这里调用，这里只是为了单个文件调试的时候使用

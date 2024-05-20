@@ -4,6 +4,7 @@
 selenium基类
 本文件存放了selenium基类的封装方法
 """
+import allure
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
@@ -178,3 +179,11 @@ class WebPage(object):
         else:
             logger.error('无效的参数')
         return result
+
+    def capture_screenshot(self, name):
+        screenshot_dir = "./screenshots"
+        if not os.path.exists(screenshot_dir):
+            os.makedirs(screenshot_dir)
+        screenshot_path = os.path.join(screenshot_dir, f"{name}.png")
+        self.driver.save_screenshot(screenshot_path)
+        allure.attach.file(screenshot_path, name="Screenshot", attachment_type=allure.attachment_type.PNG)

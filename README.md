@@ -40,10 +40,10 @@ automatedTestingFramework-master
 ## 项目特点
 
 - **对Selenium库进行了二次封装**，使得测试人员可以更专注于测试场景的设计和执行，而不必过多关注底层细节。同时，具备了日志记录功能，可帮助测试人员更好地跟踪测试执行过程中的各种信息，提高故障排查效率。
-- **模块化设计：** 基于Java SpringBoot框架思想，该项目将Web UI测试流程进行了分离解耦，提供了多个模块，使得测试人员可以根据需要选择性地使用不同的模块，从而更灵活地搭建测试流程，提高了测试的可维护性和可扩展性。
+- **模块化设计：** 受益于ORM框架思想，该项目将Web UI测试流程进行了分离解耦，提供了多个模块，使得测试人员可以根据需要选择性地使用不同的模块，从而更灵活地搭建测试流程，提高了测试的可维护性和可扩展性。
 - **多样例批量执行：** 通过集成pytest库，该项目实现了多样例批量执行，测试人员可以一次性运行多个测试用例，并通过pytest测试报告清晰地查看测试结果，提高了测试效率和执行速度。
 - **UI可视化及数据分析：** 集成了Allure框架，该项目实现了自动化测试脚本的UI可视化，测试人员可以通过多种有助于数据分析的测试表格和统计图直观地查看测试结果，发现潜在的问题和趋势，从而及时采取措施提高被测试应用的质量。
-
+- **基于Jenkins的CI/CD持续集成与交付：** 通过与Jenkins的集成，该项目可实现自动化构建和持续集成，测试人员可以在代码变更后自动触发测试任务，从而快速反馈和修复问题，进一步提高了测试效率和项目的整体质量。
 ## 技术介绍
 
 **技术栈：** Python、Selenium、Pytest、Allure、Jenkins
@@ -153,7 +153,19 @@ class Test02:
 ### Allure可视化测试报告
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/05699adf-7b48-4a6f-bde9-214b84a0c0a9)
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/4442d5f6-87a6-4fca-a5c2-b44596907482)
-##
+
+### 基于本地与线上的Jenkins的CI/CD持续集成
+**参考：**
+
+https://blog.csdn.net/weixin_57303037/article/details/135226326
+
+https://www.cnblogs.com/luoshuai7394/p/17706998.html
+
+**效果：**
+
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/a89b6366-9aa8-439a-a6a8-118f33758757)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/ad9c5a55-e922-46ee-9ccc-ee5a28ca0289)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/18ab6c5a-839a-428d-a366-0a0e65e5bbfe)
 
 ## 项目待完成功能
-部分Selenium方法的二次封装、测试数据的持久化、基于本地与线上的Jenkins的CI/CD持续集成...
+部分Selenium方法的二次封装、测试数据的持久化...

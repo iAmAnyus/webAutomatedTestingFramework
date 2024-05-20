@@ -78,11 +78,16 @@ Windows10、Python3.10
 新闻按钮: 'xpath==//*[@id="s-top-left"]/a[1]'
 新闻页面标题: "百度新闻——海量中文资讯平台"
 百度主页标题: "百度一下，你就知道"
+登录错误: 'xpath==//*[@id="TANGRAM__PSP_11__error"]'
 
 # page_Service base on page.WebPage.py(Selenium二次开发基类)
-login = Element('login2')  # 获取login2.yaml
+login = Element('login')  # 获取login.yaml
+"""
+login用法：
+当调用login['名称']时会触发Element.__getitem__方法
+return: Element类所读取的yaml元素配置文件相对应的键值
+"""
 class baiDuPage(WebPage):
-
     """登录"""
     def BaiDuClick(self):
         self.is_click(login['登录按钮'])
@@ -104,55 +109,85 @@ class baiDuPage(WebPage):
     def btn_news(self):
         self.is_click(login['新闻按钮'])
 
-# test_case.test01 base on page_service.login2.py
-class Test01:
+    def is_login_failed(self):
+        # 假设错误信息元素有特定的ID或class
+        try:
+           self.find_element(login['登录错误'])
+           logger.error("登录失败：账号或密码错误")
+           self.capture_screenshot("登录失败")
+           return True
+        except NoSuchElementException:
+            return False
 
-    @allure.step("测试1.1")
+# test_case.test01 base on page_service.login2.py
+@allure.story("测试样例1")
+class Test01:
+    @allure.step("初始化")
     @pytest.fixture(scope="function")
-    def test_001(self, drivers):
-        driver = baiDuPage(drivers)
-        driver.get_url(ini.url)
+    def initialized(self, drivers):
+        self.driver = baiDuPage(drivers)
+        self.driver.get_url(ini.url)
+
+
+    @allure.step("页面切换")
+    @pytest.mark.usefixtures("initialized")
+    def test_001(self):
+        driver = self.driver
         driver.btn_news()
         time.sleep(1)
-        driver.switch_to_window(drivers,"百度一下，你就知道")
-        time.sleep(1)
-        yield driver
+        driver.switch_to_window(driver, "百度一下，你就知道")
 
-    def test_002(self, test_001):
+
+    @allure.step("测试用例2")
+    def test_002(self):
+        print("测试样例2")
         pass
+
 
 # test_case.test02 base on page_service.login2.py
 @allure.story("测试样例2")
 class Test02:
-
-    @allure.step("登录")
+    @allure.step("初始化")
     @pytest.fixture(scope="function")
-    def test_001(self, drivers):
-        """登录"""
-        login = baiDuPage(drivers)
-        login.get_url(ini.url)
+    def initialized(self, drivers):
+        self.login = baiDuPage(drivers)
+        self.login.get_url(ini.url)
+
+    @pytest.mark.usefixtures("initialized")
+    @allure.step("登录且检测是否登录失败")
+    def test_001(self):
+        """
+        登录
+        """
+        login = self.login
         login.BaiDuClick()
         login.protocol()
         login.input_user('yourUser')
         login.input_pwd('yourPwd')
         login.btn_login()
-        time.sleep(3)
-        yield login
+        time.sleep(1)
 
+        # 判断是否登录失败,失败则截图并展示
+        if login.is_login_failed():
+            pytest.fail("登录失败：账号或密码错误")
+
+    @pytest.mark.usefixtures("initialized")
     @allure.step("登录后的操作")
-    @pytest.mark.usefixtures("test_001")
-    def test_002(self, test_001):
-        """登录后操作"""
+    def test_002(self):
+        """
+        登录后操作
+        """
         time.sleep(1)
         print("登录后操作")
         pass
 ```
 ### Pytest测试报告
-![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/9fe28d7b-8c7b-49c9-94cc-965db04f79ea)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/e0c92d6e-3fe8-4246-b52e-8ffe93803c73)
 
 ### Allure可视化测试报告
-![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/05699adf-7b48-4a6f-bde9-214b84a0c0a9)
-![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/4442d5f6-87a6-4fca-a5c2-b44596907482)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/8bb2ace2-a7ea-4cdb-9b3d-b882a041370c)
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/88a1a019-7cdb-4fea-bdc0-db52365557b4)
+
 
 ### 基于本地与线上的Jenkins的CI/CD持续集成
 **参考：**
@@ -168,4 +203,4 @@ https://www.cnblogs.com/luoshuai7394/p/17706998.html
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/18ab6c5a-839a-428d-a366-0a0e65e5bbfe)
 
 ## 项目待完成功能
-部分Selenium方法的二次封装、测试数据的持久化...
+部分Selenium方法的二次封装、测试数据的持久化、多线程执行测试用例、接口自动化测试...

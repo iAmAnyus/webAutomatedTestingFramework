@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
-import os,sys,re
+import os,sys
 import yaml
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
-from config.conf import cm
+from UITestConfig.configManager import cm
 from utils.times import running_time
 
 class inspect(object):

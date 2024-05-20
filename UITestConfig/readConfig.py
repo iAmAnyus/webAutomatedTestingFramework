@@ -3,7 +3,7 @@ import configparser
 import sys,os
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 
-from config.conf import cm
+from UITestConfig.configManager import cm
 
 HOST='HOST'
 

@@ -4,7 +4,7 @@
 import os,sys
 import yaml
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
-from config.conf import cm
+from UITestConfig.configManager import cm
 
 
 class Element(object):

@@ -2,7 +2,7 @@
 import os, sys
 import time
 import allure
-from common.readConfig import ini
+from UITestConfig.readConfig import ini
 import pytest
 from page_service.login import baiDuPage
 

@@ -15,7 +15,7 @@ import time
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 
-from config.conf import cm
+from UITestConfig.configManager import cm
 from utils.times import sleep
 from utils import logger
 

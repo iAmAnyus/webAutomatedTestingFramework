@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import sys, os
-import time
 
 from selenium.common import NoSuchElementException
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 from page.webPage import WebPage
-from common.readElement import Element
-from script.inspect import inspect
+from UITestConfig.readElement import Element
 from utils import logger
 login = Element('login')  # 获取login.yaml
 """

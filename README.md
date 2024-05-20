@@ -25,7 +25,7 @@ automatedTestingFramework-master
 ├── allure-results        --  测试报告日志
 ├── common                --  公共方法模块
 ├── UITestConfig          --  UI自动化配置模块
-├── InterfaceTestConfig   --  UI自动化配置模块
+├── InterfaceTestConfig   --  接口自动化配置模块
 ├── page                  --  selenium封装模块
 ├── page_element          --  元素搜集模块
 ├── page_service          --  业务设计模块

@@ -23,7 +23,6 @@
 automatedTestingFramework-master
 ├── allure-report         --  allure前端
 ├── allure-results        --  测试报告日志
-├── common                --  公共方法模块
 ├── UITestConfig          --  UI自动化配置模块
 ├── InterfaceTestConfig   --  接口自动化配置模块
 ├── page                  --  selenium封装模块

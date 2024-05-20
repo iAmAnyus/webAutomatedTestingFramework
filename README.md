@@ -146,7 +146,6 @@ class Test01:
 
 # test_case.test02 base on page_service.login2.py
 @allure.story("测试样例2")
-@allure.story("测试样例2")
 class Test02:
     @allure.step("初始化")
     @pytest.fixture(scope="function")

@@ -31,8 +31,6 @@ automatedTestingFramework-master
 ├── script                --  脚本模块
 ├── test_case             --  测试用例模块
 ├── utils                 --  工具模块
-├── conftest.py           --  pytest配置文件
-├── pytest.ini            --  pytest日志配置文件
 ├── report.html           --  pytest测试报告
 └── run_case.py           --  allure启动脚本
 ```

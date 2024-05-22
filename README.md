@@ -34,6 +34,7 @@ automatedTestingFramework-master
 ├── report.html           --  pytest测试报告
 └── run_case.py           --  allure启动脚本
 ```
+![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/4aeb8b57-c935-4b91-a0b7-eee7fd28e4d5)
 
 ## 项目特点
 

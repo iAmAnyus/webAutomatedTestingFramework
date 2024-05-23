@@ -47,7 +47,7 @@ automatedTestingFramework-master
   
 ## 技术介绍
 
-**技术栈：** Python、Selenium、Pytest、Allure、Jenkins
+**技术栈：** Python、Selenium、Pytest、Allure、Jenkins、Requests
 
 ## 运行环境
 

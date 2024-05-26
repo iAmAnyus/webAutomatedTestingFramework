@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+import os
 import sys
 import subprocess
 
@@ -7,16 +8,46 @@ WIN = sys.platform.startswith('win')
 
 
 def main():
-   """主函数"""
-   steps = [
-       "venv\\Script\\activate" if WIN else "source venv/bin/activate",
-       "pytest --alluredir allure-results --clean-alluredir",
-       "allure generate allure-results -c -o allure-report",
-       "allure open allure-report"
-   ]
-   for step in steps:
-       subprocess.run("call " + step if WIN else step, shell=True)
+   WIN = os.name == 'nt'
+
+def run_tests():
+    """
+    运行测试并生成测试结果
+    """
+    activate_env = "venv\\Scripts\\activate" if WIN else "source venv/bin/activate"
+    pytest_command = "pytest --alluredir=allure-results  --rootdir=UITestConfig"
+    steps = [
+        activate_env,
+        pytest_command,
+    ]
+
+    for step in steps:
+        subprocess.run("call " + step if WIN else step, shell=True)
+
+def generate_and_open_allure_report():
+    """
+    生成并打开 Allure 报告
+    """
+    generate_command = "allure generate allure-results -c -o allure-report"
+    open_command = "allure open allure-report"
+
+    steps = [
+        generate_command,
+        open_command,
+    ]
+
+    for step in steps:
+        subprocess.run(step, shell=True)
+
+def main():
+    """
+    主函数
+    """
+    run_tests()
+    generate_and_open_allure_report()
 
 
 if __name__ == "__main__":
-   main()
+   run_tests()
+   run_tests()
+   generate_and_open_allure_report()

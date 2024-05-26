@@ -49,7 +49,7 @@ class ConfigManager(object):
     @property
     def ini_file(self):
         """配置文件"""
-        ini_file = os.path.join(self.BASE_DIR, 'config', '../InterfaceTestConfig/pytestConf.ini')
+        ini_file = os.path.join(self.BASE_DIR, 'UITestConfig', 'pytestConf.ini')
         if not os.path.exists(ini_file):
             raise FileNotFoundError("配置文件%s不存在！" % ini_file)
         return ini_file

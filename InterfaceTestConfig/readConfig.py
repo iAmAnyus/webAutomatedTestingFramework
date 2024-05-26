@@ -7,7 +7,7 @@ configPath=os.path.join(cur_path, "allureConf.ini")
 conf=configparser.ConfigParser()
 conf.read(configPath)
 
-"""readConfig.py中读取出来的cfg.ini地址的传递给testcase"""
+"""readConfig.py中读取出来的allureConf.ini地址的传递给testcase"""
 """可在testcase中import此文件"""
 """适用于接口测试"""
 # addUserUrl=conf.get("url","addUserUrl")

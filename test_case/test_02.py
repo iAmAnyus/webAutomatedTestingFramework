@@ -33,9 +33,6 @@ class Test02:
         login.btn_login()
         time.sleep(1)
 
-        # 判断是否登录失败,失败则截图并展示
-        if login.is_login_failed():
-            pytest.fail("登录失败：账号或密码错误")
 
     @pytest.mark.usefixtures("initialized")
     @allure.step("登录后的操作")

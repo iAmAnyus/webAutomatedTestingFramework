@@ -122,7 +122,7 @@ class baiDuPage(WebPage):
         except NoSuchElementException:
             return False
 
-# test_case.test01 base on page_service.login2.py
+# test_case.test01 base on page_service.login.py
 @allure.story("测试样例1")
 class Test01:
     @allure.step("初始化")

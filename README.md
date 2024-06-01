@@ -205,5 +205,14 @@ https://www.cnblogs.com/luoshuai7394/p/17706998.html
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/ad9c5a55-e922-46ee-9ccc-ee5a28ca0289)
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/18ab6c5a-839a-428d-a366-0a0e65e5bbfe)
 
+## 快速开始
+```cmd
+in cmd
+cd ./automatedTestingFramework-master
+pip install -r requirements.txt
+
+python run_case.py
+```
+
 ## 项目待完成功能
-部分Selenium方法的二次封装、测试数据的持久化、多线程执行测试用例、接口自动化测试、安全测试...
+部分Selenium方法的二次封装、测试数据的持久化、接口自动化测试、安全测试...

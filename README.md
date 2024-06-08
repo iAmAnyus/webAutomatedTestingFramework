@@ -174,9 +174,9 @@ class Test01:
 #allure的测试接口配置
 [url]
 sampleUrl = https://www.baidu.com
-loginUrl = http://rework.dfrobot.work/login
-searchUrl = https://cs.swust.edu.cn/search
-csrfUrl = https://www.offershow.cn/account?type=1
+loginUrl = yourWebsite
+searchUrl = https://yourWebsite/search
+csrfUrl = https://yourWebsite/account?type=1
 
 
 #readConfig.py 元素搜集模块
@@ -214,12 +214,12 @@ class WebAttack:
             "password": payload
         }
         h = {
-            "Host": "101.34.99.21:3000",
+            "Host": "yourWebsite.34.99.21:3000",
             "Accept": "application/json, text/plain, */*",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
             "Content-Type": "application/x-www-form-urlencoded",
-            "Origin": "http://rework.dfrobot.work",
-            "Referer": "http://rework.dfrobot.work/",
+            "Origin": "http://yourWebsite",
+            "Referer": "http://yourWebsite",
             "Accept-Encoding": "gzip, deflate",
             "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6,en-GB;q=0.5",
             "Connection": "keep-alive"

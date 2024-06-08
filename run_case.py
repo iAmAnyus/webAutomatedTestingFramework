@@ -39,12 +39,6 @@ def generate_and_open_allure_report():
     for step in steps:
         subprocess.run(step, shell=True)
 
-def main():
-    """
-    主函数
-    """
-    run_tests()
-    generate_and_open_allure_report()
 
 
 if __name__ == "__main__":

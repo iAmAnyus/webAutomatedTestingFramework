@@ -70,9 +70,9 @@ Windows10、Python3.10
 | Selenium | 4.20.0 |
 
 ## 模板样例及测试报告
-### 模板样例
+### UI自动化模板样例
 ```python
-# login2.yaml base on page_element
+# login2.yaml base on page_element 
 登录按钮: 'xpath==//*[@id="s-top-loginbtn"]'
 账号: 'xpath==//*[@id="TANGRAM__PSP_11__userName"]'
 密码: 'xpath==//*[@id="TANGRAM__PSP_11__password"]'
@@ -83,7 +83,28 @@ Windows10、Python3.10
 百度主页标题: "百度一下，你就知道"
 登录错误: 'xpath==//*[@id="TANGRAM__PSP_11__error"]'
 
-# page_Service base on page.WebPage.py(Selenium二次开发基类)
+#readElement.py 元素搜集模块
+class Element(object):
+    """获取元素"""
+
+    def __init__(self, name):
+        self.file_name = '%s.yaml' % name
+        self.element_path = os.path.join(cm.ELEMENT_PATH, self.file_name)
+        if not os.path.exists(self.element_path):
+            raise FileNotFoundError("%s 文件不存在！" % self.element_path)
+        with open(self.element_path, encoding='utf-8') as f:
+            self.data = yaml.safe_load(f)
+
+    def __getitem__(self, item):
+        """获取属性"""
+        data = self.data.get(item)
+        if data:
+            name, value = data.split('==')
+            return name, value
+        raise ArithmeticError("{}中不存在关键字：{}".format(self.file_name, item))
+
+
+#page.WebPage.py 业务设计模块
 login = Element('login')  # 获取login.yaml
 """
 login用法：
@@ -91,7 +112,9 @@ login用法：
 return: Element类所读取的yaml元素配置文件相对应的键值
 """
 class baiDuPage(WebPage):
-    """登录"""
+    """
+    登录
+    """
     def BaiDuClick(self):
         self.is_click(login['登录按钮'])
 
@@ -106,23 +129,21 @@ class baiDuPage(WebPage):
 
     def btn_login(self):
         self.is_click(login['登录'])
+        time.sleep(1)
+        try:
+           self.find_element(login['登录错误'])
+           logger.error("登录失败：账号或密码错误")
+           self.capture_screenshot("登录失败")
+           pytest.fail("登录失败：账号或密码错误")
+        except NoSuchElementException:
+            pass
     """
     新闻
     """
     def btn_news(self):
         self.is_click(login['新闻按钮'])
 
-    def is_login_failed(self):
-        # 假设错误信息元素有特定的ID或class
-        try:
-           self.find_element(login['登录错误'])
-           logger.error("登录失败：账号或密码错误")
-           self.capture_screenshot("登录失败")
-           return True
-        except NoSuchElementException:
-            return False
-
-# test_case.test01 base on page_service.login2.py
+# test_01.py 用例管理模块
 @allure.story("测试样例1")
 class Test01:
     @allure.step("初始化")
@@ -145,45 +166,101 @@ class Test01:
     def test_002(self):
         print("测试样例2")
         pass
-
-
-# test_case.test02 base on page_service.login2.py
-@allure.story("测试样例2")
-class Test02:
-    @allure.step("初始化")
-    @pytest.fixture(scope="function")
-    def initialized(self, drivers):
-        self.login = baiDuPage(drivers)
-        self.login.get_url(ini.url)
-
-    @pytest.mark.usefixtures("initialized")
-    @allure.step("登录且检测是否登录失败")
-    def test_001(self):
-        """
-        登录
-        """
-        login = self.login
-        login.BaiDuClick()
-        login.protocol()
-        login.input_user('yourUser')
-        login.input_pwd('yourPwd')
-        login.btn_login()
-        time.sleep(1)
-
-        # 判断是否登录失败,失败则截图并展示
-        if login.is_login_failed():
-            pytest.fail("登录失败：账号或密码错误")
-
-    @pytest.mark.usefixtures("initialized")
-    @allure.step("登录后的操作")
-    def test_002(self):
-        """
-        登录后操作
-        """
-        time.sleep(1)
-        print("登录后操作")
-        pass
 ```
+
+### 接口安全测试模板样例
+
+```python
+#allure的测试接口配置
+[url]
+sampleUrl = https://www.baidu.com
+loginUrl = http://rework.dfrobot.work/login
+searchUrl = https://cs.swust.edu.cn/search
+csrfUrl = https://www.offershow.cn/account?type=1
+
+
+#readConfig.py 元素搜集模块
+import os
+import configparser
+cur_path = os.path.dirname(os.path.realpath(__file__))
+configPath = os.path.join(cur_path, "allureConf.ini")
+conf = configparser.ConfigParser()
+
+try:
+    with open(configPath, 'r', encoding='utf-8') as config_file:
+        conf.read_file(config_file)
+except UnicodeDecodeError as e:
+    print(f"Error reading configuration file: {e}")
+
+"""readConfig.py中读取出来的allureConf.ini地址的传递给testcase"""
+"""可在testcase中import此文件"""
+"""适用于接口测试"""
+# addUserUrl=conf.get("url","addUserUrl")
+# loginUrl=conf.get("url","loginUrl")
+# updateUserUrl=conf.get("url","updateUserUrl")
+# deleteUserUrl=conf.get("url","deleteUserUrl")
+# setUserPowerUrl=conf.get("url","setUserPowerUrl")
+# exportUrl=conf.get("url","exportUrl")
+loginUrl = conf.get("url","loginUrl")
+SearchUrl = conf.get("url","SearchUrl")
+csrfUrl = conf.get("url","csrfUrl")
+
+#WebAttack.py 业务设计模块
+class WebAttack:
+    def sql_injection(self, payload):
+        url = readConfig.loginUrl
+        data = {
+            "staff_id": payload,
+            "password": payload
+        }
+        h = {
+            "Host": "101.34.99.21:3000",
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 Edg/125.0.0.0",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Origin": "http://rework.dfrobot.work",
+            "Referer": "http://rework.dfrobot.work/",
+            "Accept-Encoding": "gzip, deflate",
+            "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6,en-GB;q=0.5",
+            "Connection": "keep-alive"
+        }
+        try:
+            response = requests.post(url, data=data, headers=h, timeout=10)
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Request failed: {e}")
+            pytest.fail("Request failed")
+
+        logger.info(f"Testing SQL Injection with payload: {payload}")
+        logger.info(f"Response Code: {response.status_code}")
+        logger.info(f"response text:\n{response.text}")
+
+        assert response.status_code != 200, "SQL Injection Detected"
+   
+#test_03.py 用例管理模块       
+@allure.story("Web攻击用例")
+class Test03:
+    @allure.step("SQL注入测试")
+    @pytest.mark.parametrize("payload", [
+        "' OR '1'='1",
+        "' OR '1'='1' -- ",
+        "' OR '1'='1' /*",
+        "' OR '1'='1' #",
+        "' OR '1'='1' or ''='"
+    ], ids=[
+        "sql注入1",
+        "sql注入2",
+        "sql注入3",
+        "sql注入4",
+        "sql注入5"
+    ])
+    def test_sql_injection(self, payload):
+        """
+        @function: 测试SQL注入
+        @param payload: 注入负载
+        """
+        attack.sql_injection(payload)
+```
+
 ### Pytest测试报告
 ![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/e0c92d6e-3fe8-4246-b52e-8ffe93803c73)
 
@@ -215,4 +292,4 @@ python run_case.py
 ```
 
 ## 项目待完成功能
-部分Selenium方法的二次封装、测试数据的持久化、接口自动化测试、安全测试...
+部分Selenium方法的二次封装、测试数据持久化...

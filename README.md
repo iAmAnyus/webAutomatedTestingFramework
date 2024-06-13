@@ -286,7 +286,7 @@ https://www.cnblogs.com/luoshuai7394/p/17706998.html
 ```cmd
 in cmd
 cd ./automatedTestingFramework-master
-pip install -r requirements.txt
+pip install -r requirement.txt
 
 python run_case.py
 ```

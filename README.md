@@ -64,8 +64,8 @@ Windows10、Python3.10
 | 开发环境 | 版本   |
 | -------- | ------ |
 | Jdk      | 1.8    |
-| Python   | 3.10.4 |
-| Requests | 2.20.0 |
+| Python   | 3.10.* |
+| Requests | 2.31.0 |
 | Pytest   | 8.0.0  |
 | Selenium | 4.20.0 |
 

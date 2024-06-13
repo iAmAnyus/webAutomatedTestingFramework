@@ -65,7 +65,7 @@ Windows10、Python3.10
 | -------- | ------ |
 | Jdk      | 1.8    |
 | Python   | 3.10.* |
-| Requests | 2.31.0 |
+| Requests | 2.20.0 |
 | Pytest   | 8.0.0  |
 | Selenium | 4.20.0 |
 

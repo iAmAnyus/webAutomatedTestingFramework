@@ -1,5 +1,11 @@
 allure-pytest==2.9.45
 pytest==8.0.0
 selenium==4.20.0
-requests==2.20.0
+requests==2.31.0
 pytest-assume==2.2.0
+allure-python-commons==2.11.0
+PyYAML==6.0.1
+pytest-html==4.1.1
+pytest-logger==1.1.0
+pytest-dotenv==1.0.0
+py==1.11.0

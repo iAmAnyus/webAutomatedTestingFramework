@@ -59,12 +59,12 @@ Windows10、Python3.10
 
 | 开发工具 | 说明              |
 | -------- | ----------------- |
-| Pycharm  | Python开发工具IDE |
+| Pycharm  | Python程序开发工具 |
 
 | 开发环境 | 版本   |
 | -------- | ------ |
 | Jdk      | 1.8    |
-| Python   | 3.10.4 |
+| Python   | 3.10.* |
 | Requests | 2.20.0 |
 | Pytest   | 8.0.0  |
 | Selenium | 4.20.0 |
@@ -286,7 +286,7 @@ https://www.cnblogs.com/luoshuai7394/p/17706998.html
 ```cmd
 in cmd
 cd ./automatedTestingFramework-master
-pip install -r requirements.txt
+pip install -r requirement.txt
 
 python run_case.py
 ```

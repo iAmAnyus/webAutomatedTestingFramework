@@ -11,7 +11,7 @@ driver = None
 def drivers(request):
     global driver
     if driver is None:
-        driver = webdriver.Chrome()  #设置浏览器类型
+        driver = webdriver.Edge()  #设置浏览器类型
         driver.maximize_window()
 
     def fn():

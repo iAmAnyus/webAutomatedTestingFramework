@@ -5,7 +5,7 @@ import time
 import pytest
 from selenium.common import NoSuchElementException
 
-sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
+sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))))
 from page.webPage import WebPage
 from UITestConfig.readElement import Element
 from utils import logger

@@ -24,6 +24,7 @@ except UnicodeDecodeError as e:
 loginUrl = conf.get("url","loginUrl")
 SearchUrl = conf.get("url","SearchUrl")
 csrfUrl = conf.get("url","csrfUrl")
+fileUploadUrl = conf.get("url","fileUploadUrl")
 
 
 # if __name__  == '__main__' :

@@ -1,2 +1,0 @@
-[INFO] 打开网页：https://www.baidu.com
-[INFO] 点击元素：('xpath', '//*[@id="s-top-left"]/a[1]')

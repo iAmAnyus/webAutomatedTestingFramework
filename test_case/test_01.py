@@ -4,11 +4,11 @@ import time
 import allure
 from UITestConfig.readConfig import ini
 import pytest
-from page_service.login import baiDuPage
+from page_service.Interface.login import baiDuPage
 
 sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
 
-@allure.story("测试样例1")
+@allure.story("测试用例1")
 class Test01:
     @allure.step("初始化")
     @pytest.fixture(scope="function")
@@ -26,9 +26,9 @@ class Test01:
         driver.switch_to_window(driver, "百度一下，你就知道")
 
 
-    @allure.step("测试用例2")
+    @allure.step("step2")
     def test_002(self):
-        print("测试样例2")
+        print("step2")
         pass
 
 # pytest会自动搜索测试用例，不用在这里调用，这里只是为了单个文件调试的时候使用

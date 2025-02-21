@@ -28,7 +28,7 @@ def generate_and_open_allure_report():
     """
     生成并打开 Allure 报告
     """
-    generate_command = "allure generate allure-results -c -o allure-report"
+    generate_command = "allure generate allure-results -o allure-report --clean"
     open_command = "allure open allure-report"
 
     steps = [

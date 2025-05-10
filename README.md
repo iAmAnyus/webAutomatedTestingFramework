@@ -45,6 +45,7 @@ automatedTestingFramework-master
 - **集成UI自动化测试与接口安全测试：** 项目支持UI自动化测试，同时集成了常用的API测试工具库Requests，实现了接口测试的自动化。此外，项目可选择引入安全测试样例，包括SQL注入、XSS、CSRF攻击等常见漏洞的检测，确保应用程序在功能测试和安全性方面都得到了全面覆盖。通过结合Selenium等Web Driver工具，测试人员可以在统一的平台上进行全面的测试，提高测试的覆盖率和深度。
 - **UI可视化及数据分析：** 集成了Allure框架，该项目实现了自动化测试脚本的UI可视化，测试人员可以通过多种有助于数据分析的测试表格和统计图直观地查看测试结果，发现潜在的问题和趋势，从而及时采取措施提高被测试应用的质量。
 - **基于Jenkins的CI/CD持续集成与交付：** 通过与Jenkins的集成，该项目可实现自动化构建和持续集成，框架可以在代码变更后自动触发测试任务，从而快速反馈和修复问题，进一步提高测试效率和项目的整体质量。
+![image](https://github.com/user-attachments/assets/a4db0f83-9de0-433a-85bb-14d9291143b7)
 
   
 ## 技术介绍
@@ -270,6 +271,8 @@ class Test03:
 
 
 ### 基于本地与线上的Jenkins的CI/CD持续集成
+![image](https://github.com/user-attachments/assets/1ec052b3-3bd9-45b8-8d01-406123c8642a)
+
 **参考：**
 
 https://blog.csdn.net/weixin_57303037/article/details/135226326
@@ -278,9 +281,11 @@ https://www.cnblogs.com/luoshuai7394/p/17706998.html
 
 **效果：**
 
-![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/a89b6366-9aa8-439a-a6a8-118f33758757)
-![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/ad9c5a55-e922-46ee-9ccc-ee5a28ca0289)
-![image](https://github.com/iAmAnyus/webAutomatedTestingFramework/assets/130461533/18ab6c5a-839a-428d-a366-0a0e65e5bbfe)
+![image](https://github.com/user-attachments/assets/70aed317-773d-44be-a58f-f45d07568987)
+![image](https://github.com/user-attachments/assets/9dfb6ed8-7f41-4b84-8556-3d5ebbfc0c5e)
+![image](https://github.com/user-attachments/assets/26471a2c-abb8-4906-96bc-0e1cd725cb91)
+![image](https://github.com/user-attachments/assets/4d275846-eb2f-4be6-b1f5-da73de5e864a)
+
 
 ## 快速开始
 ```cmd
